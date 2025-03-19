@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #1F1D2B;
+    --color-primary-semi: #9B51E0;
+    --color-primary-base: #3081ED;
+    --color-blur-primary: #FB37FF;
+    --color-blur-secondary: #18B2DE;
+
+    --animate-gradient: gradient 2s ease infinite;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50% 
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+}
+
+* {
+    @apply box-border;
+    font-family: "Poppins", "Nunito";
+}
+
+html {
+    @apply scroll-smooth;
+}

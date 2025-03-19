@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/ui/Navbar.astro';
+import Screen from '../components/main/Screen.astro';
+import Scroller from '../components/main/Scroller.astro';
+import Container from '../components/main/Container.astro';
+import Banner from '../components/ui/Banner.astro';
+
+---
+
+<Layout>
+    <Screen>
+        <Scroller>
+            <Container>
+                <Navbar _pageUrl="/" />
+                <Banner />
+            </Container>
+        </Scroller>
+    </Screen>
+</Layout>

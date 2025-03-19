@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import imageFrame from "../../assets/images/Rectangle 306.png";
+import framer from "../../assets/images/unsplash_OG44d93iNJk.png";
+
+const borderStyled = {
+    border: '1px solid #ffffff'
+}
+---
+
+<div class="w-full px-8 md:px-20 py-15 relative z-1">
+    <div class="flex items-center flex-col lg:flex-row gap-x-3 gap-y-5">
+        <div class="flex-1 w-full">
+            <div class="flex flex-col gap-y-3">
+                <div class="text-[25px] md:text-[35px] lg:text-[48px] leading-[1.1] font-[550] text-slate-100">Discover, collect,<br />and charity in extraordinary NFT marketplace</div>
+                <div class="text-[13px] md:text-[14.5px] font-[400] leading-tight text-slate-100">Revolutionizing digital ownership, our NFT project brings exclusive, verifiable, and unique assets to the blockchain. Whether it's art, collectibles, or utility-driven tokens, we offer a seamless and secure experience for creators and collectors alike.</div>
+                <div class="flex gap-x-3 gap-y-2 flex-col sm:flex-row items-center mt-2">
+                    <button class="py-2 px-12 font-[550] text-slate-100 bg-gradient-to-r from-primary-semi to-primary-base rounded-md">Explore</button>
+                    <button class="py-2 px-12 font-[550] text-slate-100 rounded-md" style={borderStyled}>Create</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-1 w-full relative">
+            <div class="w-full flex lg:justify-end relative">
+                <Image class="w-full lg:w-[60%] h-[340px]" src={imageFrame} alt={"Image Frame"} />
+                <Image class="w-[95%] lg:w-[55%] h-[240px] absolute top-[5%] right-[2.5%]" src={framer} alt="Framer" />
+            </div>
+        </div>
+    </div>
+    <div class="absolute w-[120px] h-[120px] rounded-full bg-blur-primary -z-1 blur-[350px] top-[-2%] right-[25%]"></div>
+    <div class="absolute w-[120px] h-[120px] rounded-full bg-blur-secondary -z-1 blur-[350px] bottom-[10%] right-[5%]"></div>
+</div>

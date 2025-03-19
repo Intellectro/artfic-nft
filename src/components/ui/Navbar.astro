@@ -1,0 +1,41 @@
+---
+    // @ts-nocheck
+
+    import nftLogo from "../../assets/artfic-logo.png";
+    import { Image } from "astro:assets";
+
+    const {frontmatter: {paths}} = Object.values(import.meta.glob("../../routes/paths.md", {eager: true}))[0];
+
+    const {_pageUrl} = Astro.props;
+
+    const borderStyled = {
+        border: '1px solid #ffffff'
+    }
+---
+
+
+<div class="flex justify-between items-center px-8 md:px-20 py-5">
+    <div class="w-full">
+        <div class="w-full md:w-[45%] h-[45px]">
+            <Image class="w-full h-full object-left object-contain aspect-video" src={nftLogo} alt={nftLogo.src.split('/').pop()?.split('.')[0]} />
+        </div>
+    </div>
+    <div class="w-full flex justify-center items-center">
+        <div class="hidden lg:flex items-center gap-x-5 text-slate-100">
+            {paths.map(path => (<a class={`text-[13.5px] uppercase font-[400] ${path._path === _pageUrl ? 'bg-gradient-to-r bg-clip-text from-primary-semi to-primary-base text-transparent relative font-bold after:absolute after:w-full after:h-[1px] after:bg-primary-semi after:bottom-[-2%] after:left-0 animate-gradient' : ''}`} href={path._path}>{path._name}</a>))}
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-slate-100 font-bold block lg:hidden">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+    </div>
+    <div class="w-full">
+        <div class="flex justify-end items-center">
+            <a href="/create">
+                <button class="py-1 md:py-2 px-2 md:px-4 font-[450] text-slate-100 uppercase text-[13px] md:text-[14px] rounded-md" style={borderStyled}>Create</button>
+            </a>
+            <a href="/signin">
+                <button class="py-1 md:py-2 px-2 md:px-4 font-[450] text-slate-100 uppercase text-[12px] md:text-[14px] text-nowrap">Sign In</button>
+            </a>
+        </div>
+    </div>
+</div>
